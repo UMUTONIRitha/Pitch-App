@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+<!-- Content block -->
+{% block content %}
+<h3> <b>Pitch , Vote and Comment</b></h3>
+<button>Category</button>
+{% endblock%}
