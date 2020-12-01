@@ -1,18 +1,21 @@
 {% extends 'base.html'%}
 {% import 'bootstrap/wtf.html' as wtf %}
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
 
 {% block content %}
-
-<div class="contain-fluid" style="background-color: black;color:wheat">
-<div class="row justify-content-center">
-<div class="col-md-12">
-<h3 class="text-center m-5" style="text-align: center;color:wheat"><strong>Create New Pitch</strong></h3>
-<div class="card p-5 " style="margin-left: 100px;margin-right:100px;color:wheat">
-{{wtf.quick_form(form)}}
-</div>
-</div>
-</div>
+<div class="container">
+    <h3 class="text-center m-5" style="text-align: center;font-family: 'Noto Serif JP', serif;"><strong>Create New Pitch</strong>
+    </h3>
+    <div class="jumbotron" style="background-color:lightblue;font-family: 'Noto Serif JP', serif;">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                
+                <div class="card p-5 " style="margin-left: 100px;margin-right:100px;background-color:transparent">
+                    {{wtf.quick_form(form)}}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

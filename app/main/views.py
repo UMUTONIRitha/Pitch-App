@@ -7,7 +7,10 @@ from .. import db,photos
 
 @main.route('/')
 def index():
+
     pitches = Pitch.query.all()
+
+   
     language = Pitch.query.filter_by(category = 'language').all()
     family = Pitch.query.filter_by(category = 'family').all()
     education = Pitch.query.filter_by(category = 'education').all()
@@ -25,7 +28,7 @@ def new_pitch():
         category = form.category.data
         user_id = current_user
         new_pitch_object = Pitch(pitch=pitch,user_id=current_user._get_current_object().id,category=category,title=title)
-        new_pitch_object.save_pitch()
+        new_pitch_object.save_pit()
         return redirect(url_for('main.index'))
     return render_template('pitch.html', form = form)
 @main.route('/comment/<int:pitch_id>', methods = ['POST','GET'])
@@ -39,7 +42,7 @@ def comment(pitch_id):
         pitch_id = pitch_id
         user_id = current_user._get_current_object().id
         new_comment = Comment(comment = comment,user_id = user_id, pitch_id = pitch_id)
-        new_comment.save_comment()
+        new_comment.save_com()
         return redirect(url_for('.comment', pitch_id = pitch_id))
     return render_template('comment.html', form = form, pitch = pitch,all_comments = all_comments)
 @main.route('/user/<uname>')

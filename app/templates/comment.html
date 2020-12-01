@@ -1,20 +1,20 @@
 {% extends 'base.html'%}
 {% import 'bootstrap/wtf.html' as wtf%}
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
 {% block content%}
-<div class="container">
+<div class="container" style="background-color:lightblue;">
 
-<h3 class="text-center m-4"><strong>Write a comment</strong></h3>
-<div class = "card p-5 bg-info">
+<h3 class="text-center m-4" style="font-family: 'Noto Serif JP', serif;"><strong>Write a comment</strong></h3>
+<div class = "card p-5 ">
 {{ wtf.quick_form(form)}}
 </div>
 
 {% if all_comments %}
 <div class="m-5">
-<p>Comments</p> {% for comment in all_comments %} <div class="card">
+<p style="font-family: 'Noto Serif JP', serif;">Comments</p> {% for comment in all_comments %} <div class="card">
 <div class="card p-3">
-<p class="card-title">{{ comment.comment }}</p>
-<p class="card-text">{{ comment.user.username}}</p>
+<p class="card-title" style="font-family: 'Noto Serif JP', serif;">{{ comment.comment }}</p>
+<p class="card-text" style="font-family: 'Noto Serif JP', serif;">{{ comment.user.username}}</p>
 </div>
 </div>
 {% endfor %}

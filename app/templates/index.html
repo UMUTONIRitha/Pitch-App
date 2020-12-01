@@ -2,55 +2,42 @@
 {% import 'macros.html' as macro%}
 {% block styles%}
 {{ super() }}
-
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
- <script src="https://kit.fontawesome.com/83d474e45f.js" crossorigin="anonymous"></script>
- {% endblock %}
-
- {% block content%}
- 
- <div class="container-fluid" id="particles-js" style="background-color:black;color:white">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content%}
+<div class="class="container
+style="background-image:url('https://media.istockphoto.com/photos/blue-abstract-background-or-texture-picture-id1138395421?k=6&m=1138395421&s=612x612&w=0&h=bJ1SRWujCgg3QWzkGPgaRiArNYohPl7-Wc4p_Fa_cyA=');background-size:cover;background-repeat:no-repeat;margin-top:-20px">
+<div id="particles-js">
 
     <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link" id="cats" data-toggle="tab" href="#all" style="color:white"><strong>Pitches</strong></a><br>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="cats" data-toggle="tab" href="#language" style="color:white"><strong>Language</strong></a><br>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="cats" data-toggle="tab" href="#family" style="color:white"><strong>Family</strong></a><br>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="cats" data-toggle="tab" href="#education" style="color: white"><strong>Education</strong></a><br>
-    </li>
-     <li class="nav-item">
-        <a class="nav-link" id="cats" data-toggle="tab" href="#friends" style="color:white"><strong>Friends</strong></a><br>
-    </li>
-     <li class="nav-item">
-        <a class="nav-link" id="cats" data-toggle="tab" href="#favorite" style="color: white"><strong>Favorite</strong></a><br>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" id="cats" data-toggle="tab" href="#all"
+                style="font-size: 18px;font-family: 'Noto Serif JP', serif;color:white"><strong>Pitches</strong></a><br>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="cats" data-toggle="tab" href="#language"
+                style="font-size: 18px;font-family: 'Noto Serif JP', serif;color:white"><strong>Language</strong></a><br>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="cats" data-toggle="tab" href="#family"
+                style="font-size: 18px;font-family: 'Noto Serif JP', serif;color:white"><strong>Family</strong></a><br>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="cats" data-toggle="tab" href="#education"
+                style="font-size: 18px;font-family: 'Noto Serif JP', serif;color:white"><strong>Education</strong></a><br>
+        </li>
     </ul>
-
-    <hr>
-    <br><br>
-    <div class="tab-content">
+</div>
+<div class="tab-content">
     <div class="container tab-pane active" id="all"><br>
-    {{macro.display(pitches)}} </div>
-
+        {{macro.display(pitches)}} </div>
     <div class="container tab-pane fade" id="language"><br>
-    {{macro.display(language)}} </div>
-     <div class="container tab-pane fade" id="family"><br>
-    {{macro.display(family)}} </div>
-     <div class="container tab-pane fade" id="education"><br>
-    {{macro.display(education)}} </div>
-   </div>
-   <div class="container tab-pane fade" id="friends"><br>
-    {{macro.display(friends)}} </div>
-   </div>
-   <div class="container tab-pane fade" id="favorite"><br>
-    {{macro.display(favorite)}} </div>
-   </div>
+        {{macro.display(language)}} </div>
+    <div class="container tab-pane fade" id="family"><br>
+        {{macro.display(family)}} </div>
+    <div class="container tab-pane fade" id="education"><br>
+        {{macro.display(education)}} </div>
 </div>
 </div>
 {% endblock %}
