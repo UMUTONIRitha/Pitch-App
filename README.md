@@ -19,6 +19,7 @@
 
 * Python
 * Flask
+* Postgres
 * Heroku
 
 ## Technology Used
