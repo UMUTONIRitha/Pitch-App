@@ -27,6 +27,10 @@ style="background-image:url('https://media.istockphoto.com/photos/blue-abstract-
             <a class="nav-link" id="cats" data-toggle="tab" href="#education"
                 style="font-size: 18px;font-family: 'Noto Serif JP', serif;color:white"><strong>Education</strong></a><br>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" id="cats" data-toggle="tab" href="#friends"
+                style="font-size: 18px;font-family: 'Noto Serif JP', serif;color:white"><strong>Friends</strong></a><br>
+        </li>
     </ul>
 </div>
 <div class="tab-content">
@@ -38,6 +42,8 @@ style="background-image:url('https://media.istockphoto.com/photos/blue-abstract-
         {{macro.display(family)}} </div>
     <div class="container tab-pane fade" id="education"><br>
         {{macro.display(education)}} </div>
+    <div class="container tab-pane fade" id="friends"><br>
+        {{macro.display(friends)}} </div>
 </div>
 </div>
 {% endblock %}
