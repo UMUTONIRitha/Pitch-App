@@ -1,0 +1,49 @@
+{% macro displayCategoryList(category_list) %}
+{% for category in category_list %}
+<div>
+    <a href="{{url_for('main.category',id = category.id)}}">
+        <p>{{category.cat_name|upper}}</p>
+    </a>
+</div>
+{% endfor %}
+{% endmacro %}
+{% macro display(pitches) %}
+<div class="container-fluid">
+    <div class="row">
+        {% if pitches %}
+        {% for category in pitches %}
+        <div class="col-md-4">
+            <div class="thumbnail" id="carded">
+                <div class="card-body text-center">
+                    <p>Title: {{category.title}}</p>
+                    <p class="text-center">Catgory: {{category.category}}</p>
+                    <footer class="blockquote-footer text-center" style="color:black">Posted by:
+                        {{category.user.username}}</footer><br>
+                    <div>
+                        <p><span class="foot"><i class="fas fa-comment-dots"
+                                    style="color:black;font-size: 18px;"></i>{{category.comment.count()}}</span>
+                            <span class="foot"><a href="{{url_for('main.like',id=category.id)}}"><i
+                                        class="fa fa-thumbs-up"
+                                        style="font-size:18px;color:green"></i></a>{{category.upvote.count()}}</span>
+                            <span class="foot"><a href="{{url_for('main.dislike', id = category.id)}}"><i
+                                        class="fa fa-thumbs-down"
+                                        style="font-size:18px;color:black"></i></a>{{category.downvote.count()}}</span>
+                        </p>
+                        <p><a href="{{url_for('main.comment',pitch_id=category.id)}}"
+                                class="btn btn-success btn-sm">Comment</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="card w-90 mb-3">
+            <div class="card-body">
+                <p class="card-title text-center">Category has 0 posts</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}
